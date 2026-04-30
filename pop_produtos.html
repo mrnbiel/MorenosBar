@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <link rel="icon" href="img/logo.moreno.ico" type="img/ico">
+        <title>Moreno's Bar</title>
+    </head>
+    <body>
+        <div>
+            <h1 id="nome-produto"></h1>
+            <img id="img-produto" src=""/>
+            <p id="desc-produto"></p>
+
+            <!-- captura dados do produto -->
+             <script>
+                function capturaDados(dado){
+                    urlParams = new URLSearchParams(window.location.search)
+                    return urlParams.get(dado);
+                }
+
+                //preenche o nome do produto
+                document.getElementById("nome-produto").textContent=capturaDados("produto");
+                //preecnhe a img do produto
+                document.getElementById("img-produto").src=capturaDados("img");
+                //preenche desc do produto
+                document.getElementById("desc-produto").textContent=capturaDados("desc");
+
+             </script>
+        </div>
+    </body>
+</html>
